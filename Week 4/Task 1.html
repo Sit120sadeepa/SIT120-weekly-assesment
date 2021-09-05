@@ -1,15 +1,15 @@
 <html>
     <head>
-        <title>Sample 4</title>
         <link rel="stylesheet" href="index.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
         
         <div id="app">
-            {{ message }}
+            <span v-if="seen">Now you see the message which I type in seen element in the js file</span>
+            <span v-else="hide">Now you see what i wrote in hide element in js file</span>
         </div>
-        
+            
         <script src="index.js"></script>
     </body>
 </html>
