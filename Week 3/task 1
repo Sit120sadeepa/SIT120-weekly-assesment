@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>Sample 2</title>
+    </head>
+    <body>
+        <h2>Length of the sententence </h2>
+        <p id='demo'></p>
+    <script>
+        let text="THIS IS A SAMPLE";
+        document. getElementById("demo").innerHTML=text.length;
+    </script>
+    </body>
+</html>
