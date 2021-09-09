@@ -1,0 +1,34 @@
+<html>
+
+<head>
+  <title>week 7</title>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+  #app
+  <script>
+    Vue.component('prompt-compo', {
+      template: '<div><p>${message}</p><button @click="sayHi">Click me</button></div>',
+      delimiters: ['${', '}'],
+      data: function () {
+        return {
+          message: 'Hi'
+        }
+      },
+      methods: {
+        sayHi: function () {
+          alert('Hii');
+        }
+      }
+    });
+
+    let vm = new Vue({
+      el: '#app',
+      template: `<prompt-compo/>`
+    });
+  </script>
+</body>
+
+</html>
