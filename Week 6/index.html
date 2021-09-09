@@ -1,0 +1,80 @@
+<html>
+<head>
+    <title>week 6</title>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h3>User form for the survey</h3>
+        <label for="name">Name</label><br>
+        <input id="name" type="text" v-model="username" placeholder="Your name"> <br><br>
+
+        <label for="name">Password</label><br>
+        <input id="name" type="password" v-model="password" placeholder="Must have atleast 6 characters"> <br><br>
+
+        <label for="email">E-mail</label><br>
+        <input id="name" type="text" v-model="email" placeholder="example@gmail.com"> <br><br>
+
+        <button v-on:click="checkInput">Submit</button><br>
+
+        <p>Select what vehicles you like...</p>
+
+
+        <input type="checkbox" id="Toyota" value="Toyota" v-model="checkedNames" />
+        <label for="Toyota">Toyota</label><br>
+        <input type="checkbox" id="Mitsubhishi" value="Mitsubhishi" v-model="checkedNames" />
+        <label for="Mitsubhishi">Mitsubhishi</label><br>
+        <input type="checkbox" id="Nissan" value="Nissan" v-model="checkedNames" />
+        <label for="Nissan">Nissan</label>
+        <br />
+        <span>Selected names: {{ checkedNames }}</span>
+
+
+        <p>Select the color you like..</p>
+        <select v-model="selected">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+    <script>
+        var form = new Vue({
+            el: '#app',
+            data: {
+                username: '',
+                password: '',
+                email: '',
+                checkedNames: [],
+                selected: 'A',
+                options: [
+                    { text: 'Brilliant White', value: 'Brilliant White' },
+                    { text: 'Metallic black', value: 'Metallic Black' },
+                    { text: 'Metallic grey', value: 'Metallic Grey' }]
+            },
+
+            methods: {
+                checkInput: function () {
+                    var str = '';
+                    if (this.username) {
+                        str = str + "username:" + this.username;
+                    }
+                    if (this.password) {
+                        str = str + "password:" + this.password;
+                    }
+                    if (this.email) {
+                        str = str + "email:" + this.email;
+                    }
+                    if (str) {
+                        alert("Thank you")
+                    } else {
+                        alert("Please input required info")
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
